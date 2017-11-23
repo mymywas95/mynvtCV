@@ -1,3 +1,5 @@
+@import "../lib/circle";
+
 @mixin prefix($property, $value) {
   -webkit-#{$property}: #{$value};
   -moz-#{$property}: #{$value};
@@ -21,13 +23,20 @@
     top: 0;
     left: 0;
     overflow: hidden;
+    img{
+      width: 100%;
+      height:auto;
+    }
   }
 }
 
 $full-width: 100%;
-$border-color: #000;
+$main-color: #9B0002;
+$border-color: #9B0002;
+$main-font-size: 14px;
 body {
   margin: 0;
+  font-size: $main-font-size;
 }
 
 ul {
@@ -40,6 +49,21 @@ ul {
   }
 }
 
+h3{
+  border-bottom: 1px solid $border-color;
+  padding-bottom: 10px;
+  font-size: $main-font-size + 6;
+}
+h4{
+  font-size: $main-font-size + 4;
+}
+h5{
+  font-size: $main-font-size + 2;
+}
+.no-border-bottom{
+  border-bottom: none;
+  padding-bottom: 0;
+}
 .cv-background-top {
   min-height: 450px;
   background: #9B0002;
@@ -66,44 +90,55 @@ ul {
 }
 
 .name-block {
-  font-size: 25px;
+  font-size: 26px;
+  font-weight: 700;
   text-align: right;
 }
 
 .developer-block {
-  font-size: 20px;
+  font-size: 18px;
   text-align: right;
 }
 
 $avatar-size: 100px;
+.avatar-block{
+  float: right;
+}
 .avatar {
-  text-align: right;
-  position: absolute;
-  width: 100%;
-  img {
-    width: $avatar-size;
-    height: $avatar-size;
+  width: $avatar-size;
+  height: $avatar-size;
+  @include imageFrame(1,1);
+  .avatar-item{
     border-radius: 50%;
     border: 4px solid $border-color;
+    img{
+      width: auto;
+      height:100%;
+      overflow: hidden;
+    }
   }
 }
 
 .imgage-info-block {
-  position: absolute;
-  top: 35px;
-  width: 30%;
-  right: 75px;
   background: rgba(0, 0, 0, 0.5);
   color: white;
+  padding: 2px 5px;
+  position: absolute;
+  right: 75px;
+  top: 35px;
+  width: 30%;
 }
 
 .imgage-block {
-  position: relative;
   min-height: $avatar-size;
+  margin: 20px 0;
+  position: relative;
 }
-.contact-block{
+
+.contact-block {
   display: inline-block;
 }
+
 .contact-detail-item {
   $contact-icon-width: 10%;
   padding: 5px 0;
@@ -122,8 +157,8 @@ $avatar-size: 100px;
       border-left: none;
       text-align: left;
     }
-    height: 50px;
-    > div{
+    height: 30px;
+    > div {
       margin-left: auto;
       margin-right: auto;
       position: relative;
@@ -132,46 +167,55 @@ $avatar-size: 100px;
     }
   }
 }
-.contact-icon{
-  .fa{
+
+.contact-icon {
+  .fa {
     font-size: 20px;
+    color: $main-color;
   }
 }
-.about-me-specific{
+
+.about-me-specific {
   display: inline-block;
   width: 100%;
-  li{
+  margin: 10px 0;
+  li {
     width: $full-width/3;
-    &:nth-child(2){
+    font-size: 18px;
+    &:nth-child(2) {
       text-align: center;
     }
-    &:nth-child(3){
+    &:nth-child(3) {
       text-align: right;
     }
   }
 }
+
 //tag css
-.tags{
+.tags {
   display: inline-block;
   width: 100%;
 }
-.tags li, .tags a{
-  float:left;
-  height:24px;
-  line-height:24px;
-  position:relative;
-  font-size:11px;
+
+.tags li, .tags a {
+  float: left;
+  height: 24px;
+  line-height: 24px;
+  position: relative;
+  font-size: 11px;
 }
-.tags a{
-  margin-left:20px;
-  padding:0 10px 0 12px;
-  background:#0089e0;
-  color:#fff;
-  text-decoration:none;
+
+.tags a {
+  margin-left: 20px;
+  padding: 0 10px 0 12px;
+  background: $main-color;
+  color: #fff;
+  text-decoration: none;
   @include prefix(border-bottom-left-radius, 2px);
   @include prefix(border-top-left-radius, 2px);
 }
-.tags a:before{
+
+.tags a:before {
   content: "";
   float: left;
   position: absolute;
@@ -179,29 +223,64 @@ $avatar-size: 100px;
   right: -12px;
   width: 0;
   height: 0;
-  border-color: transparent transparent transparent #0089e0;
+  border-color: transparent transparent transparent $main-color;
   border-style: solid;
   border-width: 12px 0 12px 12px;
 }
-.tags a:after{
-  content:"";
-  position:absolute;
-  top:10px;
+
+.tags a:after {
+  content: "";
+  position: absolute;
+  top: 10px;
   right: -70px;
-  float:left;
-  width:4px;
-  height:4px;
+  float: left;
+  width: 4px;
+  height: 4px;
   @include prefix(border-radius, 2px);
-  background: #0089e0;
+  background: $main-color;
 }
-.line{
+$width-line-year: 70px;
+.line {
   position: absolute;
   top: 44%;
   left: 90%;
-  width: 70px;
+  width: $width-line-year;
   height: 2px;
-  background: #0089e0;
+  background: $main-color;
 }
-.education-content{
-  padding-left: 70px;
+
+.education-content {
+  padding-left: $width-line-year + 10;
+  font-size: $main-font-size + 4;
+  span{
+    font-weight: 700;
+  }
+}
+
+.skills-item {
+  display: inline-block;
+  width: 100%;
+  img{
+    width: 80px;
+  }
+}
+.education-block{
+  margin-top: 8px;
+}
+.block{
+  margin-bottom: 25px;
+  &:last-child{
+    margin-bottom: 0;
+  }
+}
+.experiences-item{
+  margin-bottom: 10px;
+}
+.experiences-item-content{
+  padding: 0 20px;
+}
+.experiences-content{
+  span{
+    font-weight: 700;
+  }
 }
