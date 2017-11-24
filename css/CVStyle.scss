@@ -108,20 +108,24 @@ h5 {
   min-height: 187px;
   background: #4D5055;
 }
-
 .cv-content-block {
   position: absolute;
-  top: 0;
+  top: 50%;
   width: 100%;
+  @include prefix(transform,  translateY(-50%));
 }
 
 .cv-block {
   position: relative;
+  background-image: url("../img/background.png");
+  background-repeat: no-repeat;
+  @include prefix(background-size,  cover);
 }
 
 .cv-content {
   margin: 15px;
   background: #fff;
+  padding-bottom: 5px;
 }
 
 
@@ -133,7 +137,7 @@ h5 {
 .name-block {
   @extend .developer-block;
   font-size: 26px;
-  font-weight: 700;
+  font-family: 'Kanit-Medium';
 }
 $avatar-size: 100px;
 .avatar-block {

@@ -797,15 +797,28 @@ h5 {
 
 .cv-content-block {
   position: absolute;
-  top: 0;
-  width: 100%; }
+  top: 50%;
+  width: 100%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%); }
 
 .cv-block {
-  position: relative; }
+  position: relative;
+  background-image: url("../img/background.png");
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -ms-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; }
 
 .cv-content {
   margin: 15px;
-  background: #fff; }
+  background: #fff;
+  padding-bottom: 5px; }
 
 .developer-block, .name-block {
   font-size: 18px;
@@ -813,7 +826,7 @@ h5 {
 
 .name-block {
   font-size: 26px;
-  font-weight: 700; }
+  font-family: 'Kanit-Medium'; }
 
 .avatar-block {
   float: left; }
