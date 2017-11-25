@@ -1,5 +1,5 @@
 @import "../lib/circle";
-
+@import "../lib/bootstrap-4.0.0-beta.2/scss/bootstrap-grid";
 @mixin prefix($property, $value) {
   -webkit-#{$property}: #{$value};
   -moz-#{$property}: #{$value};
@@ -110,9 +110,19 @@ h5 {
 }
 .cv-content-block {
   position: absolute;
-  top: 50%;
   width: 100%;
-  @include prefix(transform,  translateY(-50%));
+  @include media-breakpoint-up(xs) {
+      @include prefix(transform,  translateY(0));
+      top: 0;
+  }
+  //@include media-breakpoint-up(md) {
+  //  @include prefix(transform,  translateY(-50%));
+  //  top: 50%;
+  //}
+  @include media-breakpoint-up(xl) {
+    @include prefix(transform,  translateY(-50%));
+    top: 50%;
+  }
 }
 
 .cv-block {
@@ -164,9 +174,9 @@ $avatar-size: 100px;
   color: white;
   padding: 2px 5px;
   position: absolute;
-  left: 75px;
+  left: 90px;
   top: 35px;
-  width: 30%;
+  width: 100%;
   text-align: right;
 }
 
