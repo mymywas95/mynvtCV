@@ -313,7 +313,11 @@ h5 {
 }
 
 .experiences-item {
-  margin-bottom: 10px;
+  margin: 25px;
+  &:last-child{
+    margin-bottom: 0;
+  }
+
 }
 
 .experiences-item-content {
