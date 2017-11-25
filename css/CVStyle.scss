@@ -1,34 +1,8 @@
 @import "../lib/circle";
+@import "CVVariable";
+@import "CVMixin";
 @import "../lib/bootstrap-4.0.0-beta.2/scss/bootstrap-grid";
-@mixin prefix($property, $value) {
-  -webkit-#{$property}: #{$value};
-  -moz-#{$property}: #{$value};
-  -ms-#{$property}: #{$value};
-  -o-#{$property}: #{$value};
-  #{$property}: #{$value};
-}
-
-@mixin imageFrame($X, $Y) {
-  position: relative;
-  &:before {
-    content: '';
-    display: block;
-    padding-top: percentage($Y / $X);
-  }
-
-  & > *:first-child {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    overflow: hidden;
-    img {
-      width: 100%;
-      height: auto;
-    }
-  }
-}
+$logo-skill: $circle-size - 20;
 @font-face {
   font-family: 'Roboto-Thin';
   src: url('../fonts/Roboto-Thin.eot') format('embedded-opentype'),
@@ -58,10 +32,6 @@
   font-style: normal;
 }
 
-$full-width: 100%;
-$main-color: #9B0002;
-$border-color: #9B0002;
-$main-font-size: 14px;
 body {
   margin: 0;
   font-size: $main-font-size;
@@ -149,7 +119,7 @@ h5 {
   font-size: 26px;
   font-family: 'Kanit-Medium';
 }
-$avatar-size: 100px;
+
 .avatar-block {
   float: left;
 }
@@ -232,7 +202,8 @@ $avatar-size: 100px;
   margin: 10px 0;
   li {
     width: $full-width/3;
-    font-size: 18px;
+    font-size: $main-font-size + 4;
+    font-weight: 600;
     &:nth-child(2) {
       text-align: center;
     }
@@ -291,7 +262,7 @@ $avatar-size: 100px;
   background: $main-color;
 }
 
-$width-line-year: 70px;
+
 .line {
   position: absolute;
   top: 44%;
@@ -312,7 +283,6 @@ $width-line-year: 70px;
 .skills-item {
   display: inline-block;
   width: 100%;
-  $logo-skill: 80px;
   img {
     width: $logo-skill;
   }

@@ -11,7 +11,7 @@ $bg-color: #e5e5e5;
 
 $primary-color-green: #4db53c;
 $primary-color-orange: #dd9d22;
-
+$circle-size: 80px;
 
 // colors dark skin
 $primary-color-dark: #c6ff00;
@@ -75,12 +75,12 @@ $primary-color-orange-dark: #e08833;
 
 	// bigger size
 	&.big{
-		font-size: 240px;
+		font-size: $circle-size*3;
 	}
 
 	// smaller size
 	&.small{
-		font-size: 100px;
+		font-size: $circle-size;
 	}
 
 	// centered value inside circle

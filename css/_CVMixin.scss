@@ -1,0 +1,29 @@
+@mixin prefix($property, $value) {
+  -webkit-#{$property}: #{$value};
+  -moz-#{$property}: #{$value};
+  -ms-#{$property}: #{$value};
+  -o-#{$property}: #{$value};
+  #{$property}: #{$value};
+}
+
+@mixin imageFrame($X, $Y) {
+  position: relative;
+  &:before {
+    content: '';
+    display: block;
+    padding-top: percentage($Y / $X);
+  }
+
+  & > *:first-child {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
