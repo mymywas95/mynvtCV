@@ -2,21 +2,23 @@
 @import "CVVariable";
 @import "CVMixin";
 @import "../lib/bootstrap-4.0.0-beta.2/scss/bootstrap-grid";
+
 $logo-skill: $circle-size - 20;
 @font-face {
   font-family: 'Roboto-Thin';
   src: url('../fonts/Roboto-Thin.eot') format('embedded-opentype'),
-  url('../fonts/Roboto-Thin.woff')  format('woff'),
-  url('../fonts/Roboto-Thin.ttf')  format('truetype'),
+  url('../fonts/Roboto-Thin.woff') format('woff'),
+  url('../fonts/Roboto-Thin.ttf') format('truetype'),
   url('../fonts/Roboto-Thin.svg#Roboto-Thin') format('svg');
   font-weight: normal;
   font-style: normal;
 }
+
 @font-face {
   font-family: 'Roboto-Light';
   src: url('../fonts/Roboto-Light.eot') format('embedded-opentype'),
-  url('../fonts/Roboto-Light.woff')  format('woff'),
-  url('../fonts/Roboto-Light.ttf')  format('truetype'),
+  url('../fonts/Roboto-Light.woff') format('woff'),
+  url('../fonts/Roboto-Light.ttf') format('truetype'),
   url('../fonts/Roboto-Light.svg#Roboto-Light') format('svg');
   font-weight: normal;
   font-style: normal;
@@ -25,8 +27,8 @@ $logo-skill: $circle-size - 20;
 @font-face {
   font-family: 'Kanit-Medium';
   src: url('../fonts/Kanit-Medium.eot') format('embedded-opentype'),
-  url('../fonts/Kanit-Medium.woff')  format('woff'),
-  url('../fonts/Kanit-Medium.ttf')  format('truetype'),
+  url('../fonts/Kanit-Medium.woff') format('woff'),
+  url('../fonts/Kanit-Medium.ttf') format('truetype'),
   url('../fonts/Kanit-Medium.svg#Kanit-Medium') format('svg');
   font-weight: normal;
   font-style: normal;
@@ -47,9 +49,11 @@ ul {
     float: left;
   }
 }
-h1,h2,h3,h4,h5{
+
+h1, h2, h3, h4, h5 {
   font-family: 'Kanit-Medium';
 }
+
 h3 {
   border-bottom: 1px solid $border-color;
   padding-bottom: 10px;
@@ -78,19 +82,17 @@ h5 {
   min-height: 187px;
   background: #4D5055;
 }
+
 .cv-content-block {
   position: absolute;
   width: 100%;
   @include media-breakpoint-up(xs) {
-      @include prefix(transform,  translateY(0));
-      top: 0;
+    @include prefix(transform, translateY(0));
+    top: 0;
   }
-  //@include media-breakpoint-up(md) {
-  //  @include prefix(transform,  translateY(-50%));
-  //  top: 50%;
-  //}
+
   @include media-breakpoint-up(xl) {
-    @include prefix(transform,  translateY(-50%));
+    @include prefix(transform, translateY(-50%));
     top: 50%;
   }
 }
@@ -99,7 +101,7 @@ h5 {
   position: relative;
   background-image: url("../img/background.png");
   background-repeat: no-repeat;
-  @include prefix(background-size,  cover);
+  @include prefix(background-size, cover);
 }
 
 .cv-content {
@@ -108,12 +110,11 @@ h5 {
   padding-bottom: 5px;
 }
 
-
-
 .developer-block {
   font-size: 18px;
   text-align: left;
 }
+
 .name-block {
   @extend .developer-block;
   font-size: 26px;
@@ -227,6 +228,12 @@ h5 {
   font-size: 11px;
 }
 
+.tags li {
+  @include media-breakpoint-down(md) {
+    float: none;
+  }
+}
+
 .tags a {
   margin-left: 20px;
   padding: 0 10px 0 12px;
@@ -235,6 +242,11 @@ h5 {
   text-decoration: none;
   @include prefix(border-bottom-left-radius, 2px);
   @include prefix(border-top-left-radius, 2px);
+  @include media-breakpoint-down(md) {
+    margin-left: 0;
+    @include prefix(border-bottom-right-radius, 2px);
+    @include prefix(border-top-right-radius, 2px);
+  }
 }
 
 .tags a:before {
@@ -248,6 +260,9 @@ h5 {
   border-color: transparent transparent transparent $main-color;
   border-style: solid;
   border-width: 12px 0 12px 12px;
+  @include media-breakpoint-down(md) {
+    display: none;
+  }
 }
 
 .tags a:after {
@@ -260,8 +275,10 @@ h5 {
   height: 4px;
   @include prefix(border-radius, 2px);
   background: $main-color;
+  @include media-breakpoint-down(md) {
+    display: none;
+  }
 }
-
 
 .line {
   position: absolute;
@@ -270,11 +287,17 @@ h5 {
   width: $width-line-year;
   height: 2px;
   background: $main-color;
+  @include media-breakpoint-down(md) {
+    display: none;
+  }
 }
 
 .education-content {
   padding-left: $width-line-year + 10;
   font-size: $main-font-size + 4;
+  @include media-breakpoint-down(md) {
+    padding-left: 0;
+  }
   span {
     font-weight: 700;
   }
@@ -286,13 +309,13 @@ h5 {
   img {
     width: $logo-skill;
   }
-  .c100{
+  .c100 {
     &:nth-child(1), &:nth-child(2), &:nth-child(3) {
       img {
         width: $logo-skill - 30;
       }
     }
-    &:last-child{
+    &:last-child {
       img {
         width: $logo-skill - 20;
       }
@@ -314,7 +337,7 @@ h5 {
 
 .experiences-item {
   margin: 25px;
-  &:last-child{
+  &:last-child {
     margin-bottom: 0;
   }
 
@@ -327,5 +350,20 @@ h5 {
 .experiences-content {
   span {
     font-weight: 700;
+  }
+}
+
+@media print {
+  .cv-block {
+    min-height: 792px !important;
+  }
+  .cv-content-block {
+    position: absolute;
+    width: 100%;
+    @include prefix(transform, translateY(- 50%)!important);
+    top: 50%!important;
+  }
+  .c100.small{
+    font-size: 78px!important;
   }
 }

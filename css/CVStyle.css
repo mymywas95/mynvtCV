@@ -2100,6 +2100,10 @@ h5 {
   position: relative;
   font-size: 11px; }
 
+@media (max-width: 991px) {
+  .tags li {
+    float: none; } }
+
 .tags a {
   margin-left: 20px;
   padding: 0 10px 0 12px;
@@ -2116,6 +2120,19 @@ h5 {
   -ms-border-top-left-radius: 2px;
   -o-border-top-left-radius: 2px;
   border-top-left-radius: 2px; }
+  @media (max-width: 991px) {
+    .tags a {
+      margin-left: 0;
+      -webkit-border-bottom-right-radius: 2px;
+      -moz-border-bottom-right-radius: 2px;
+      -ms-border-bottom-right-radius: 2px;
+      -o-border-bottom-right-radius: 2px;
+      border-bottom-right-radius: 2px;
+      -webkit-border-top-right-radius: 2px;
+      -moz-border-top-right-radius: 2px;
+      -ms-border-top-right-radius: 2px;
+      -o-border-top-right-radius: 2px;
+      border-top-right-radius: 2px; } }
 
 .tags a:before {
   content: "";
@@ -2128,6 +2145,9 @@ h5 {
   border-color: transparent transparent transparent #9B0002;
   border-style: solid;
   border-width: 12px 0 12px 12px; }
+  @media (max-width: 991px) {
+    .tags a:before {
+      display: none; } }
 
 .tags a:after {
   content: "";
@@ -2143,6 +2163,9 @@ h5 {
   -o-border-radius: 2px;
   border-radius: 2px;
   background: #9B0002; }
+  @media (max-width: 991px) {
+    .tags a:after {
+      display: none; } }
 
 .line {
   position: absolute;
@@ -2151,10 +2174,16 @@ h5 {
   width: 70px;
   height: 2px;
   background: #9B0002; }
+  @media (max-width: 991px) {
+    .line {
+      display: none; } }
 
 .education-content {
   padding-left: 80px;
   font-size: 18px; }
+  @media (max-width: 991px) {
+    .education-content {
+      padding-left: 0; } }
   .education-content span {
     font-weight: 700; }
 
@@ -2186,5 +2215,22 @@ h5 {
 
 .experiences-content span {
   font-weight: 700; }
+
+@media print {
+  .cv-block {
+    min-height: 792px !important; }
+
+  .cv-content-block {
+    position: absolute;
+    width: 100%;
+    -webkit-transform: translateY(-50%) !important;
+    -moz-transform: translateY(-50%) !important;
+    -ms-transform: translateY(-50%) !important;
+    -o-transform: translateY(-50%) !important;
+    transform: translateY(-50%) !important;
+    top: 50% !important; }
+
+  .c100.small {
+    font-size: 78px !important; } }
 
 /*# sourceMappingURL=CVStyle.css.map */
