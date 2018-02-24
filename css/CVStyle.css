@@ -78,7 +78,7 @@
     display: block;
     content: " ";
     border-radius: 50%;
-    background-color: #e5e5e5;
+    background-color: #4D5055;
     width: 0.84em;
     height: 0.84em;
     -webkit-transition-property: all;
@@ -2195,7 +2195,7 @@ h5 {
   .skills-item .c100:nth-child(1) img, .skills-item .c100:nth-child(2) img, .skills-item .c100:nth-child(3) img {
     width: 30px; }
   .skills-item .c100:last-child img {
-    width: 40px; }
+    width: 60px; }
 
 .education-block {
   margin-top: 8px; }
